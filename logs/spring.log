@@ -1,0 +1,270 @@
+2025-08-13T18:17:32.171+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Starting MylabSpringBootApplication using Java 17.0.2 with PID 23976 (C:\MyBackend\SpringBoot\MylabSpringBoot\target\classes started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:17:32.175+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : The following 1 profile is active: "prod"
+2025-08-13T18:17:32.228+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-13T18:17:32.228+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-13T18:17:33.069+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:17:33.088+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:17:33.579+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-13T18:17:33.589+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-13T18:17:33.589+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13T18:17:33.628+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-13T18:17:33.629+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1399 ms
+2025-08-13T18:17:33.856+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:17:34.023+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:0106e793-6e5e-411f-9598-fc0cbb792ba7 user=SA
+2025-08-13T18:17:34.025+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:17:34.069+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:17:34.133+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:17:34.172+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:17:34.411+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:17:34.494+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:17:34.678+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:17:34.682+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:17:34.761+09:00  WARN 23976 --- [MylabSpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:17:35.019+09:00  WARN 23976 --- [MylabSpringBoot] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:17:35.240+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:0106e793-6e5e-411f-9598-fc0cbb792ba7'
+2025-08-13T18:17:35.270+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-13T18:17:35.276+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:17:35.348+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-13T18:17:35.359+09:00  INFO 23976 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Started MylabSpringBootApplication in 3.643 seconds (process running for 4.107)
+2025-08-13T18:18:13.908+09:00  INFO 23976 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13T18:18:14.009+09:00  INFO 23976 --- [MylabSpringBoot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-13T18:18:14.013+09:00  INFO 23976 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:18:14.031+09:00  WARN 23976 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-08-13T18:18:14.031+09:00  INFO 23976 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:18:14.041+09:00  INFO 23976 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-13T18:18:15.761+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Starting MylabSpringBootApplication using Java 17.0.2 with PID 2500 (C:\MyBackend\SpringBoot\MylabSpringBoot\target\classes started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:18:15.764+09:00 DEBUG 2500 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-08-13T18:18:15.765+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : The following 1 profile is active: "test"
+2025-08-13T18:18:15.815+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-13T18:18:15.815+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-13T18:18:16.643+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:18:16.662+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:18:17.186+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-13T18:18:17.200+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-13T18:18:17.201+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13T18:18:17.247+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-13T18:18:17.248+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1431 ms
+2025-08-13T18:18:17.503+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:18:17.676+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:cfad6787-b12f-48be-8e62-47c922412ec1 user=SA
+2025-08-13T18:18:17.678+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:18:17.723+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:18:17.784+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:18:17.822+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:18:18.086+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:18:18.149+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:18:18.343+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:18:18.348+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:18:18.414+09:00  WARN 2500 --- [MylabSpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:18:18.697+09:00  WARN 2500 --- [MylabSpringBoot] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:18:18.924+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:cfad6787-b12f-48be-8e62-47c922412ec1'
+2025-08-13T18:18:18.956+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-13T18:18:18.963+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:18:19.038+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-13T18:18:19.057+09:00  INFO 2500 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Started MylabSpringBootApplication in 3.75 seconds (process running for 4.235)
+2025-08-13T18:20:25.533+09:00  INFO 2500 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13T18:20:25.666+09:00  INFO 2500 --- [MylabSpringBoot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-13T18:20:25.669+09:00  INFO 2500 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:20:25.674+09:00  WARN 2500 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-08-13T18:20:25.674+09:00  INFO 2500 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:20:25.676+09:00  INFO 2500 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-13T18:20:30.669+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Starting MylabSpringBootApplication using Java 17.0.2 with PID 14384 (C:\MyBackend\SpringBoot\MylabSpringBoot\target\classes started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:20:30.673+09:00 DEBUG 14384 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-08-13T18:20:30.674+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : The following 1 profile is active: "test"
+2025-08-13T18:20:30.720+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-13T18:20:30.720+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-13T18:20:31.554+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:20:31.572+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:20:32.068+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-13T18:20:32.081+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-13T18:20:32.081+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13T18:20:32.117+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-13T18:20:32.117+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1396 ms
+2025-08-13T18:20:32.363+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:20:32.533+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:27e10e8a-584c-49d0-91d4-758ccc93aa15 user=SA
+2025-08-13T18:20:32.535+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:20:32.585+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:20:32.646+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:20:32.677+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:20:32.937+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:20:33.001+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:20:33.205+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:20:33.208+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:20:33.268+09:00  WARN 14384 --- [MylabSpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:20:33.538+09:00  WARN 14384 --- [MylabSpringBoot] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:20:33.780+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:27e10e8a-584c-49d0-91d4-758ccc93aa15'
+2025-08-13T18:20:33.813+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-13T18:20:33.820+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:20:33.902+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-13T18:20:33.916+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Started MylabSpringBootApplication in 3.698 seconds (process running for 4.062)
+2025-08-13T18:20:33.924+09:00 DEBUG 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 1. application.properties 파일에 있는 환경변수를 Load
+2025-08-13T18:20:33.924+09:00 DEBUG 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.username =springboot TEST 
+2025-08-13T18:20:33.924+09:00 DEBUG 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =43 
+2025-08-13T18:20:33.924+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 2. 환경변수를 저장하고 조회하는 Properties 클래스 작성
+2025-08-13T18:20:33.924+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.uername = null
+2025-08-13T18:20:33.924+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =77 
+2025-08-13T18:20:33.924+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 3.ProdConfig 클래스와 DevConfig 클래스 작성
+2025-08-13T18:20:33.925+09:00  INFO 14384 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 현재 활성화된 MyEnvironment() : MyEnvironment(mode=개발환경)
+2025-08-13T18:23:12.934+09:00  INFO 14384 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13T18:23:13.044+09:00  INFO 14384 --- [MylabSpringBoot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-13T18:23:13.047+09:00  INFO 14384 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:23:13.053+09:00  WARN 14384 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-08-13T18:23:13.053+09:00  INFO 14384 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:23:13.055+09:00  INFO 14384 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-13T18:24:43.536+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Starting MylabSpringBootApplication using Java 17.0.2 with PID 24928 (C:\MyBackend\SpringBoot\MylabSpringBoot\target\classes started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:24:43.540+09:00 DEBUG 24928 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-08-13T18:24:43.541+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : The following 1 profile is active: "test"
+2025-08-13T18:24:43.593+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-13T18:24:43.593+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-13T18:24:44.412+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:24:44.431+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:24:44.934+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-13T18:24:44.946+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-13T18:24:44.947+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13T18:24:44.989+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-13T18:24:44.990+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1396 ms
+2025-08-13T18:24:45.242+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:24:45.434+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:dfcee64a-8340-40c9-aeed-d92f7aa7f03f user=SA
+2025-08-13T18:24:45.437+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:24:45.487+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:24:45.549+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:24:45.587+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:24:45.884+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:24:45.954+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:24:46.176+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:24:46.180+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:24:46.243+09:00  WARN 24928 --- [MylabSpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:24:46.532+09:00  WARN 24928 --- [MylabSpringBoot] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:24:46.760+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:dfcee64a-8340-40c9-aeed-d92f7aa7f03f'
+2025-08-13T18:24:46.787+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-13T18:24:46.793+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:24:46.878+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-13T18:24:46.889+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Started MylabSpringBootApplication in 3.795 seconds (process running for 4.176)
+2025-08-13T18:24:46.895+09:00 DEBUG 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 1. application.properties 파일에 있는 환경변수를 Load
+2025-08-13T18:24:46.895+09:00 DEBUG 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.username =springboot TEST 
+2025-08-13T18:24:46.895+09:00 DEBUG 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =26 
+2025-08-13T18:24:46.896+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 2. 환경변수를 저장하고 조회하는 Properties 클래스 작성
+2025-08-13T18:24:46.896+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.uername = null
+2025-08-13T18:24:46.896+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =91 
+2025-08-13T18:24:46.896+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 3.ProdConfig 클래스와 DevConfig 클래스 작성
+2025-08-13T18:24:46.896+09:00  INFO 24928 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 현재 활성화된 MyEnvironment() : MyEnvironment(mode=개발환경)
+2025-08-13T18:26:39.064+09:00  INFO 24928 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13T18:26:39.173+09:00  INFO 24928 --- [MylabSpringBoot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-13T18:26:39.176+09:00  INFO 24928 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:26:39.181+09:00  WARN 24928 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-08-13T18:26:39.181+09:00  INFO 24928 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:26:39.182+09:00  INFO 24928 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-13T18:26:55.749+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Starting MylabSpringBootApplication using Java 17.0.2 with PID 21820 (C:\MyBackend\SpringBoot\MylabSpringBoot\target\classes started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:26:55.752+09:00 DEBUG 21820 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-08-13T18:26:55.753+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : The following 1 profile is active: "test"
+2025-08-13T18:26:55.810+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-13T18:26:55.810+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-13T18:26:56.649+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:26:56.668+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:26:57.142+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-08-13T18:26:57.156+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-13T18:26:57.157+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-13T18:26:57.195+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-13T18:26:57.196+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1385 ms
+2025-08-13T18:26:57.448+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:26:57.610+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ae8d6a6c-53cc-4e75-86cb-ccda94c717a8 user=SA
+2025-08-13T18:26:57.612+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:26:57.648+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:26:57.704+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:26:57.755+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:26:58.054+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:26:58.116+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:26:58.422+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:26:58.429+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:26:58.508+09:00  WARN 21820 --- [MylabSpringBoot] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:26:58.783+09:00  WARN 21820 --- [MylabSpringBoot] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:26:59.011+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:ae8d6a6c-53cc-4e75-86cb-ccda94c717a8'
+2025-08-13T18:26:59.041+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-13T18:26:59.050+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:26:59.126+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-08-13T18:26:59.137+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.m.MylabSpringBootApplication         : Started MylabSpringBootApplication in 3.839 seconds (process running for 4.211)
+2025-08-13T18:26:59.147+09:00 DEBUG 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 1. application.properties 파일에 있는 환경변수를 Load
+2025-08-13T18:26:59.148+09:00 DEBUG 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.username =springboot TEST 
+2025-08-13T18:26:59.148+09:00 DEBUG 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =6 
+2025-08-13T18:26:59.148+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 2. 환경변수를 저장하고 조회하는 Properties 클래스 작성
+2025-08-13T18:26:59.148+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.uername = springboot TEST
+2025-08-13T18:26:59.148+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =95 
+2025-08-13T18:26:59.148+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 3.ProdConfig 클래스와 DevConfig 클래스 작성
+2025-08-13T18:26:59.148+09:00  INFO 21820 --- [MylabSpringBoot] [restartedMain] c.r.mylabspringboot.runner.MyPropRunner  : 현재 활성화된 MyEnvironment() : MyEnvironment(mode=개발환경)
+2025-08-13T18:28:14.466+09:00  INFO 21820 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-13T18:28:14.570+09:00  INFO 21820 --- [MylabSpringBoot] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-08-13T18:28:14.573+09:00  INFO 21820 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:28:14.578+09:00  WARN 21820 --- [MylabSpringBoot] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2025-08-13T18:28:14.579+09:00  INFO 21820 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:28:14.580+09:00  INFO 21820 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-08-13T18:29:09.608+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.m.MylabSpringBootApplicationTests    : Starting MylabSpringBootApplicationTests using Java 17.0.2 with PID 23192 (started by user in C:\MyBackend\SpringBoot\MylabSpringBoot)
+2025-08-13T18:29:09.610+09:00 DEBUG 23192 --- [MylabSpringBoot] [main] c.r.m.MylabSpringBootApplicationTests    : Running with Spring Boot v3.4.8, Spring v6.2.9
+2025-08-13T18:29:09.613+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.m.MylabSpringBootApplicationTests    : The following 1 profile is active: "test"
+2025-08-13T18:29:10.470+09:00  INFO 23192 --- [MylabSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-13T18:29:10.493+09:00  INFO 23192 --- [MylabSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
+2025-08-13T18:29:10.925+09:00  INFO 23192 --- [MylabSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-08-13T18:29:11.075+09:00  INFO 23192 --- [MylabSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:2fc9eccc-879d-4b48-b40b-77e245ccdf03 user=SA
+2025-08-13T18:29:11.076+09:00  INFO 23192 --- [MylabSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-08-13T18:29:11.116+09:00  INFO 23192 --- [MylabSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-13T18:29:11.183+09:00  INFO 23192 --- [MylabSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-13T18:29:11.217+09:00  INFO 23192 --- [MylabSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-08-13T18:29:11.507+09:00  INFO 23192 --- [MylabSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-13T18:29:11.569+09:00  INFO 23192 --- [MylabSpringBoot] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-13T18:29:11.793+09:00  INFO 23192 --- [MylabSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-13T18:29:11.796+09:00  INFO 23192 --- [MylabSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:29:11.947+09:00  WARN 23192 --- [MylabSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-08-13T18:29:12.268+09:00  WARN 23192 --- [MylabSpringBoot] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-08-13T18:29:12.651+09:00  INFO 23192 --- [MylabSpringBoot] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-08-13T18:29:12.723+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.m.MylabSpringBootApplicationTests    : Started MylabSpringBootApplicationTests in 3.395 seconds (process running for 4.331)
+2025-08-13T18:29:12.762+09:00 DEBUG 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : 1. application.properties ���Ͽ� �ִ� ȯ�溯���� Load
+2025-08-13T18:29:12.764+09:00 DEBUG 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : myprop.username =springboot TEST 
+2025-08-13T18:29:12.764+09:00 DEBUG 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =34 
+2025-08-13T18:29:12.764+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : 2. ȯ�溯���� �����ϰ� ��ȸ�ϴ� Properties Ŭ���� �ۼ�
+2025-08-13T18:29:12.764+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : myprop.uername = springboot TEST
+2025-08-13T18:29:12.765+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : myprop.port =1 
+2025-08-13T18:29:12.765+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : 3.ProdConfig Ŭ������ DevConfig Ŭ���� �ۼ�
+2025-08-13T18:29:12.765+09:00  INFO 23192 --- [MylabSpringBoot] [main] c.r.mylabspringboot.runner.MyPropRunner  : ���� Ȱ��ȭ�� MyEnvironment() : MyEnvironment(mode=����ȯ��)
+2025-08-13T18:29:13.318+09:00  INFO 23192 --- [MylabSpringBoot] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-08-13T18:29:13.321+09:00  INFO 23192 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-08-13T18:29:13.323+09:00  INFO 23192 --- [MylabSpringBoot] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
