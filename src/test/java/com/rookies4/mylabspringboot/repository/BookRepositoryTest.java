@@ -30,7 +30,6 @@ class BookRepositoryTest{
         book2.setTitle("JPA 프로그래밍");
         book2.setAuthor("박둘리");
         book2.setIsbn("9788956746432");
-
         book2.setPrice(305000);
         book2.setPublishDate(LocalDate.of(2025,4,30));
 
