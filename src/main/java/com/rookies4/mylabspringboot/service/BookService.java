@@ -1,11 +1,13 @@
 package com.rookies4.mylabspringboot.service;
 
 import com.rookies4.mylabspringboot.controller.dto.BookDTO;
+import com.rookies4.mylabspringboot.controller.dto.BookPatchDTO;
 import com.rookies4.mylabspringboot.entity.Book;
 import com.rookies4.mylabspringboot.entity.BookDetail;
 import com.rookies4.mylabspringboot.exception.BusinessException;
 import com.rookies4.mylabspringboot.repository.BookDetailRepository;
 import com.rookies4.mylabspringboot.repository.BookRepository;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -131,6 +133,68 @@ public class BookService {
         }
         bookRepository.deleteById(id);
     }
+    //부분 update
+    public Book updateBookPartially(Long id, BookPatchDTO.PatchRequest patchRequest) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id: " + id));
 
+        // 제목 업데이트
+        patchRequest.getTitle().ifPresent(book::setTitle);
+
+        // 저자 업데이트
+        patchRequest.getAuthor().ifPresent(book::setAuthor);
+
+        // ISBN 업데이트 로직
+        patchRequest.getIsbn().ifPresent(newIsbn -> {
+            if (!book.getIsbn().equals(newIsbn) && bookRepository.existsByIsbn(newIsbn)) {
+                throw new BusinessException("Book Already Exists with ISBN");
+            }
+            book.setIsbn(newIsbn);
+        });
+
+        // 가격 업데이트
+        patchRequest.getPrice().ifPresent(book::setPrice);
+
+        // 출판일 업데이트
+        patchRequest.getPublishDate().ifPresent(book::setPublishDate);
+
+        // BookDetail 업데이트 (nested object)
+        patchRequest.getDetailRequest().ifPresent(detailPatchRequest -> {
+            BookDetail bookDetail = book.getBookDetail();
+            if (bookDetail != null) {
+                detailPatchRequest.getDescription().ifPresent(bookDetail::setDescription);
+                detailPatchRequest.getLanguage().ifPresent(bookDetail::setLanguage);
+                detailPatchRequest.getPageCount().ifPresent(bookDetail::setPageCount);
+                detailPatchRequest.getPublisher().ifPresent(bookDetail::setPublisher);
+                detailPatchRequest.getCoverImageUrl().ifPresent(bookDetail::setCoverImageUrl);
+                detailPatchRequest.getEdition().ifPresent(bookDetail::setEdition);
+            }
+        });
+
+        return bookRepository.save(book);
+    }
+    public Book updateBookDetailPartially(Long id, BookPatchDTO.BookDetailPatchRequest patchRequest) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Book not found with id: " + id));
+
+        BookDetail bookDetail = book.getBookDetail();
+        if (bookDetail == null) {
+            // BookDetail이 없으면 새로 생성하거나, 비즈니스 예외를 발생시킬 수 있습니다.
+            // 여기서는 예외를 발생시키는 것으로 가정합니다.
+            throw new EntityNotFoundException("Book detail not found for book id: " + id);
+        }
+
+        // 각 필드에 대해 Optional을 활용하여 값이 존재할 경우에만 업데이트합니다.
+        patchRequest.getDescription().ifPresent(bookDetail::setDescription);
+        patchRequest.getLanguage().ifPresent(bookDetail::setLanguage);
+        patchRequest.getPageCount().ifPresent(bookDetail::setPageCount);
+        patchRequest.getPublisher().ifPresent(bookDetail::setPublisher);
+        patchRequest.getCoverImageUrl().ifPresent(bookDetail::setCoverImageUrl);
+        patchRequest.getEdition().ifPresent(bookDetail::setEdition);
+
+        // 부모 엔티티인 Book을 저장하면 BookDetail도 함께 저장됩니다.
+        // JPA의 영속성 전이(Cascade) 설정에 따라 달라질 수 있으나, 일반적으로는 이렇게 처리합니다.
+        return bookRepository.save(book);
+    }
 
 }
