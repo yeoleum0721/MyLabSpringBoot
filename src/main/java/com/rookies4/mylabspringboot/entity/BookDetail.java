@@ -11,30 +11,29 @@ import lombok.*;
 @Getter
 @Setter
 public class BookDetail{    
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 @Column(name ="book_detail_id")
 private Long id;
 
-@Column
+@Column(nullable = false)
 private String description;
 
-@Column
+@Column(nullable = false)
 private String language;
 
-@Column
+@Column(nullable = false)
 private Integer pageCount;
 
-@Column
+@Column(nullable = false)
 private String publisher;
 
-@Column
+@Column(nullable = false)
 private String coverImageUrl;
 
-@Column
+@Column(nullable = false)
 private String edition;
 
 @OneToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "book_id",unique = true)
+@JoinColumn(name="book_id",unique= true)
 private Book book;
 }

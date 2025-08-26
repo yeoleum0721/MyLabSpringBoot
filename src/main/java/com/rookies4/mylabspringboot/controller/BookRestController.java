@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("api/books")
 public class BookRestController {
-    private BookService bookService;
+    private final BookService bookService;
 
     //전체 조회
     @GetMapping
@@ -38,9 +38,9 @@ public class BookRestController {
     }
 
     //작가가 쓴 책
-    @GetMapping("author/{author}")
+    @GetMapping("/search/author")
     public ResponseEntity<List<BookDTO.Response>> getBookByAuthor(
-            @PathVariable String author){
+            @RequestParam("author") String author){
         return ResponseEntity.ok(bookService.getBooksByAuthor(author));
     }
     //제목으로 조회
