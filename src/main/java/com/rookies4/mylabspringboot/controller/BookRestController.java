@@ -43,12 +43,12 @@ public class BookRestController {
         return ResponseEntity.ok(bookId);
     }
 
-    //작가가 쓴 책
-    @GetMapping("author/{author}")
-    public List <Book> getBookByAuthor(@PathVariable String author){
-        List<Book> byAuthor = bookRepository.findByAuthor(author);
-        return byAuthor;
-    }
+//    //작가가 쓴 책
+//    @GetMapping("author/{author}")
+//    public List <Book> getBookByAuthor(@PathVariable String author){
+//        List<Book> byAuthor = bookRepository.findByAuthor(author);
+//        return byAuthor;
+//    }
 
     /// 수정
     @PatchMapping("/{id}")
