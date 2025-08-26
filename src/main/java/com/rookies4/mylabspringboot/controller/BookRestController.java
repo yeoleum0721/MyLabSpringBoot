@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/books")
+@RequestMapping("api/books1")
 public class BookRestController {
     private final BookRepository bookRepository;
 

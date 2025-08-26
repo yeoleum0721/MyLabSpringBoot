@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/books")
 @RequiredArgsConstructor
 public class BookController {
-    private BookService bookService;
+    private final BookService bookService;
 
     @GetMapping
     public ResponseEntity<List<BookDTO.BookResponse>> getAllBooks(){
@@ -25,12 +25,12 @@ public class BookController {
         BookDTO.BookResponse bookById = bookService.getBookById(id);
         return ResponseEntity.ok(bookById);
     }
-    @GetMapping("/{isbn}/")
+    @GetMapping("isbn/{isbn}")
     public ResponseEntity<BookDTO.BookResponse>getBooksByAuthor(@PathVariable String isbn){
         BookDTO.BookResponse bookByIsbn = bookService.getBookByIsbn(isbn);
         return ResponseEntity.ok(bookByIsbn);
     }
-    @GetMapping("/{author}/")
+    @GetMapping("/author/{author}/")
     public ResponseEntity<List<BookDTO.BookResponse>> getBookByIsbn(@PathVariable String author){
         bookService.getBooksByAuthor(author);
         return ResponseEntity.ok(bookService.getBooksByAuthor(author));

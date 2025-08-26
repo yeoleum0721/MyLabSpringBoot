@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class BookService {
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
 
     //전체 조회
     public List<BookDTO.BookResponse> getAllBooks(){
