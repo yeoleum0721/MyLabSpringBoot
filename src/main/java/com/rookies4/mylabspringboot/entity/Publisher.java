@@ -15,19 +15,26 @@ import java.util.List;
 @AllArgsConstructor
 
 public class Publisher{
-@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name="publisher_id")
-private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="publisher_id")
+    private Long id;
 
-@Column(nullable=false)
-private String name;
+    @Column(nullable=false)
+    private String name;
 
-@Column(nullable=false)
-private LocalDate establishedDate;
+    @Column(nullable=false)
+    private LocalDate establishedDate;
 
-@Column(nullable=false)
-private String address;
+    @Column(nullable=false)
+    private String address;
 
-@OneToMany(mappedBy="publisher", cascade=CascadeType.ALL, fetch= FetchType.LAZY)
-private List<Book> books;
+    @OneToMany(mappedBy="publisher", cascade=CascadeType.ALL, fetch= FetchType.LAZY)
+    private List<Book> books;
+
+    public void addBook(Book book){
+        books.add(book);
+    }
+    public void remove(Book book){
+        books.remove(book);
+    }
 }
