@@ -36,4 +36,8 @@ public class Book {
             mappedBy = "book",
             cascade = CascadeType.ALL)
     private BookDetail bookDetail;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="publiser_id",unique= true)
+    private Publisher publisher;
 }

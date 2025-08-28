@@ -1,15 +1,10 @@
 package com.rookies4.mylabspringboot.controller;
 
 import com.rookies4.mylabspringboot.controller.dto.BookDTO;
-import com.rookies4.mylabspringboot.controller.dto.BookPatchDTO;
 import com.rookies4.mylabspringboot.entity.Book;
-import com.rookies4.mylabspringboot.exception.BusinessException;
-import com.rookies4.mylabspringboot.repository.BookDetailRepository;
-import com.rookies4.mylabspringboot.repository.BookRepository;
 import com.rookies4.mylabspringboot.service.BookService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -69,18 +64,5 @@ public class BookRestController {
         bookService.deleteBook(id);
         return ResponseEntity.noContent().build();
 
-    }
-    @PatchMapping("/api/books/{id}")
-    public ResponseEntity<BookDTO.Response> patchBook(@PathVariable Long id,
-                                                      @RequestBody @Valid BookPatchDTO.PatchRequest patchRequest) {
-        Book updatedBook = bookService.updateBookPartially(id, patchRequest);
-        return ResponseEntity.ok(BookDTO.Response.fromEntity(updatedBook));
-    }
-
-    @PatchMapping("/api/books/{id}/detail")
-    public ResponseEntity<BookDTO.Response> patchBookDetail(@PathVariable Long id,
-                                                            @RequestBody @Valid BookPatchDTO.BookDetailPatchRequest patchRequest) {
-        Book updatedBook = bookService.updateBookDetailPartially (id, patchRequest); // 별도의 서비스 메서드 필요
-        return ResponseEntity.ok(BookDTO.Response.fromEntity(updatedBook));
     }
 }

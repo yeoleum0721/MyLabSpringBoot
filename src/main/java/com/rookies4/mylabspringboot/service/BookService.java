@@ -1,7 +1,6 @@
 package com.rookies4.mylabspringboot.service;
 
 import com.rookies4.mylabspringboot.controller.dto.BookDTO;
-import com.rookies4.mylabspringboot.controller.dto.BookPatchDTO;
 import com.rookies4.mylabspringboot.entity.Book;
 import com.rookies4.mylabspringboot.entity.BookDetail;
 import com.rookies4.mylabspringboot.exception.BusinessException;
