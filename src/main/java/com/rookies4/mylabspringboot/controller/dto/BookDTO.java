@@ -10,8 +10,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 public class BookDTO {
@@ -66,8 +70,6 @@ public class BookDTO {
         private String title;
         private String author;
         private String isbn;
-        private Integer price;
-        private LocalDate publishDate;
 
         public static SimpleResponse fromEntity(Book book) {
             return SimpleResponse.builder()
@@ -75,8 +77,6 @@ public class BookDTO {
                     .title(book.getTitle())
                     .author(book.getAuthor())
                     .isbn(book.getIsbn())
-                    .price(book.getPrice())
-                    .publishDate(book.getPublishDate())
                     .build();
         }
     }
@@ -93,7 +93,7 @@ public class BookDTO {
         private Integer price;
         private LocalDate publishDate;
         private BookDetailResponse detail;
-        private PublisherDTO.SimpleResponse publisher;
+        private PublisherDTO.SimpleResponseWOCount publisher;
 
         public static Response fromEntity(Book book) {
             BookDetailResponse detailResponse = book.getBookDetail() != null
@@ -107,10 +107,12 @@ public class BookDTO {
                     .edition(book.getBookDetail().getEdition())
                     .build()
                     : null;
-            PublisherDTO.SimpleResponse publishResponse = book.getPublisher() !=null
-                    ? PublisherDTO.SimpleResponse.builder()
+            PublisherDTO.SimpleResponseWOCount publishResponse = book.getPublisher() !=null
+                    ? PublisherDTO.SimpleResponseWOCount.builder()
                     .id(book.getPublisher().getId())
                     .name(book.getPublisher().getName())
+                    .establishedDate(book.getPublisher().getEstablishedDate())
+                    .address(book.getPublisher().getAddress())
                     .build()
                     : null;
             return Response.builder()
@@ -120,8 +122,8 @@ public class BookDTO {
                     .isbn(book.getIsbn())
                     .price(book.getPrice())
                     .publishDate(book.getPublishDate())
-                    .detail(detailResponse)
                     .publisher(publishResponse)
+                    .detail(detailResponse)
                     .build();
         }
     }

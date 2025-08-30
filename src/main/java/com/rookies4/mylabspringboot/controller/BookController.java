@@ -39,10 +39,10 @@ public class BookController {
         return ResponseEntity.ok(bookService.getBooksByAuthor(author));
     }
     //제목으로 조회
-    @GetMapping("title/{title}")
+    @GetMapping("/search/title")
     public ResponseEntity<List<BookDTO.Response>> getBookByTitle(
-            @PathVariable String title){
-        return ResponseEntity.ok(bookService.getBooksByAuthor(title));
+            @RequestParam("title") String title){
+        return ResponseEntity.ok(bookService.getBookByTitle(title));
     }
 
     //책 등록

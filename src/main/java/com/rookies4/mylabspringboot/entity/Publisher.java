@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,7 +30,8 @@ public class Publisher{
     private String address;
 
     @OneToMany(mappedBy="publisher", cascade=CascadeType.ALL, fetch= FetchType.LAZY)
-    private List<Book> books;
+    @Builder.Default // Builder 패턴 사용 시 기본값 설정
+    private List<Book> books = new ArrayList<>();
 
     public void addBook(Book book){
         books.add(book);

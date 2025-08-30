@@ -1,5 +1,6 @@
 package com.rookies4.mylabspringboot.controller;
 
+import com.rookies4.mylabspringboot.controller.dto.BookDTO;
 import com.rookies4.mylabspringboot.controller.dto.PublisherDTO;
 import com.rookies4.mylabspringboot.service.PublisherService;
 import lombok.RequiredArgsConstructor;
@@ -24,11 +25,18 @@ public class PublishController {
     public ResponseEntity<PublisherDTO.Response> getPublisherById(@PathVariable Long id){
         return ResponseEntity.ok(publisherService.getPublisherById(id));
     }
+    //출판사에 속한 책 조회
+    @GetMapping("/{id}/books")
+    public ResponseEntity<List<BookDTO.Response>> getPublisherByIdWithBooks(@PathVariable Long id){
+        return ResponseEntity.ok(publisherService.getPublisherByIdWithBooks(id));
+    }
+
     //name으로 조회
     @GetMapping("/name/{name}")
-    public ResponseEntity<PublisherDTO.Response> getPublisherByName(@PathVariable String name){
+    public ResponseEntity<PublisherDTO.Response> getPublisherByName(@PathVariable String name) {
         return ResponseEntity.ok(publisherService.getPublisherByName(name));
     }
+
     //create publisher
     @PostMapping
     public ResponseEntity<PublisherDTO.Response> createPublisher(
@@ -44,6 +52,7 @@ public class PublishController {
     //delete publisher
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePublisher(@PathVariable Long id){
+        publisherService.deletePublisher(id);
         return ResponseEntity.noContent().build();
     }
 }

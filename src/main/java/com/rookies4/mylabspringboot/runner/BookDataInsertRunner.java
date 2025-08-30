@@ -1,6 +1,10 @@
+package com.rookies4.mylabspringboot.runner;
+
 import com.rookies4.mylabspringboot.entity.Book;
 import com.rookies4.mylabspringboot.entity.BookDetail;
+import com.rookies4.mylabspringboot.entity.Publisher;
 import com.rookies4.mylabspringboot.repository.BookRepository;
+import com.rookies4.mylabspringboot.repository.PublisherRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -18,6 +22,7 @@ import java.util.List;
 public class BookDataInsertRunner implements CommandLineRunner {
 
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
     /**
      * 어플리케이션 시작 시 실행되는 메서드
@@ -37,135 +42,117 @@ public class BookDataInsertRunner implements CommandLineRunner {
             return;
         }
 
+        //Publisher 생성
+        List<Publisher> publishers = createPublisher();
+
         // Book과 BookDetail 생성
-        createBooksWithDetails();
+        createBooksWithDetails(publishers);
 
         log.info("Book-only data initialization completed successfully");
     }
 
-/**
- * Book과 BookDetail 샘플 데이터를 생성합니다.
- * Publisher 정보는 null로 설정됩니다.
- */
-private void createBooksWithDetails() {
-    log.info("Creating books with details (no publisher)...");
+    private List<Publisher> createPublisher(){
+        log.info("Creating Publishers ...");
 
-    // 1. 프로그래밍 관련 도서들
-    Book javaBasics = createBookWithDetail(
-            "Java 기초 완전정복", "김자바", "978-8979148123", 25000,
-            LocalDate.of(2023, 1, 15),
-            "자바 프로그래밍의 기초부터 심화까지 다루는 완벽 가이드북",
-            "Korean", 480, "한국출판사", null, "1판"
-    );
+        Publisher penguinRandomHouse = Publisher.builder()
+                .name("Penguin Random House")
+                .address("1745 Broadway, New York, NY 10019")
+                .establishedDate(LocalDate.of(2013, 7, 1))
+                .build();
 
-    Book pythonCookbook = createBookWithDetail(
-            "Python Cookbook", "David Beazley", "978-1449340377", 42000,
-            LocalDate.of(2022, 5, 20),
-            "Python 프로그래밍 실무 레시피와 기법들",
-            "English", 706, "O'Reilly Media", "https://example.com/python-cookbook.jpg", "3rd Edition"
-    );
+        Publisher oReillyMedia = Publisher.builder()
+                .name("O'Reilly Media")
+                .address("1005 Gravenstein Highway North, Sebastopol, CA 95472")
+                .establishedDate(LocalDate.of(1978, 1, 1))
+                .build();
 
-    Book webDevelopment = createBookWithDetail(
-            "모던 웹 개발", "이웹개발", "978-8960778245", 35000,
-            LocalDate.of(2023, 3, 10),
-            "HTML5, CSS3, JavaScript를 활용한 최신 웹 개발 기법",
-            "Korean", 520, "웹기술출판", "https://example.com/modern-web.jpg", "2판"
-    );
+        Publisher prenticeHall = Publisher.builder()
+                .name("Prentice Hall")
+                .address("Old Tappan, NJ")
+                .establishedDate(LocalDate.of(1913, 1, 1))
+                .build();
 
-    // 2. 데이터베이스 관련 도서들
-    Book databaseDesign = createBookWithDetail(
-            "Database System Concepts", "Abraham Silberschatz", "978-0073523323", 55000,
-            LocalDate.of(2020, 8, 15),
-            "데이터베이스 시스템의 개념과 설계에 대한 종합적 안내서",
-            "English", 1376, "McGraw-Hill Education", "https://example.com/db-concepts.jpg", "7th Edition"
-    );
+        Publisher manningPublications = Publisher.builder()
+                .name("Manning Publications")
+                .address("20 Baldwin Road, PO Box 761, Shelter Island, NY 11964")
+                .establishedDate(LocalDate.of(1993, 1, 1))
+                .build();
 
-    Book sqlMastery = createBookWithDetail(
-            "SQL 완전정복", "박데이터", "978-8968482977", 28000,
-            LocalDate.of(2023, 6, 5),
-            "SQL 기초부터 고급 쿼리 작성까지 완벽 마스터",
-            "Korean", 650, "데이터베이스출판", null, "개정판"
-    );
+        List<Publisher> publishers = publisherRepository.saveAll(
+                List.of(penguinRandomHouse, oReillyMedia, prenticeHall, manningPublications)
+        );
+        log.info("Created {} publishers", publishers.size());
+        return publishers;
 
-    // 3. 알고리즘 및 자료구조
-    Book algorithms = createBookWithDetail(
-            "Introduction to Algorithms", "Thomas H. Cormen", "978-0262033848", 89000,
-            LocalDate.of(2021, 12, 1),
-            "알고리즘의 설계와 분석에 대한 포괄적 교재",
-            "English", 1312, "MIT Press", "https://example.com/algorithms.jpg", "4th Edition"
-    );
+    }
 
-    Book dataStructures = createBookWithDetail(
-            "자료구조와 알고리즘", "정알고리즘", "978-8931436543", 32000,
-            LocalDate.of(2022, 11, 20),
-            "효율적인 자료구조와 알고리즘 설계 실습서",
-            "Korean", 450, "알고리즘출판사", "https://example.com/data-structures.jpg", "3판"
-    );
+    /**
+     * Book과 BookDetail 샘플 데이터를 생성합니다.
+     * Publisher 정보는 null로 설정됩니다.
+     */
+    private void createBooksWithDetails(List<Publisher> publishers){
+        log.info("Creating books ... ");
 
-    // 4. 소프트웨어 공학
-    Book softwareEngineering = createBookWithDetail(
-            "Software Engineering", "Ian Sommerville", "978-0133943030", 72000,
-            LocalDate.of(2020, 4, 10),
-            "소프트웨어 공학의 이론과 실무를 다루는 종합서",
-            "English", 816, "Pearson", "https://example.com/software-eng.jpg", "10th Edition"
-    );
+        Publisher penguinRandomHouse = publishers.get(0);
+        Publisher oReillyMedia = publishers.get(1);
+        Publisher prenticeHall = publishers.get(2);
+        Publisher manningPublications = publishers.get(3);
 
-    Book cleanArchitecture = createBookWithDetail(
-            "클린 아키텍처", "Robert C. Martin", "978-8966262472", 32000,
-            LocalDate.of(2019, 8, 25),
-            "소프트웨어 구조와 설계의 원칙",
-            "Korean", 352, "인사이트", "https://example.com/clean-architecture.jpg", "1판"
-    );
+        Book book1 = createBookWithDetail(
+                "Effective Java", "Joshua Bloch", "978-0134685991", 38000,
+                LocalDate.of(2018, 1, 6), oReillyMedia,
+                "A comprehensive guide to the Java programming language and its core libraries",
+                "English", 416, "Addison-Wesley Professional", "https://example.com/effective-java.jpg", "3rd Edition"
+        );
+        Book book2 = createBookWithDetail(
+                "Java: The Complete Reference", "Herbert Schildt", "978-126044023", 450000,
+                LocalDate.of(2017, 5, 26), oReillyMedia,
+                "The definitive Java programming guide",
+                "English", 1368, "McGraw-Hill Education", "https://example.com/java-complete.jpg", "11th Edition"
+        );
+        Book book3 = createBookWithDetail(
+                "Clean Code", "Robert C. Martin", "978-0132350884", 42000,
+                LocalDate.of(2008, 8, 1),prenticeHall,
+                "A handbook of Agile software craftsmanship, covering practices for writing clean, readable, and maintainable code.",
+                "English", 464, "Prentice Hall", "https://example.com/clean-code.jpg", "1st Edition"
+        );
+        Book book4 = createBookWithDetail(
+                "The Lord of the Rings", "J.R.R. Tolkien", "978-0618053267", 25000,
+                LocalDate.of(1954, 7, 29),prenticeHall,
+                "A high-fantasy adventure novel about a hobbit's quest to destroy a powerful ring and save Middle-earth.",
+                "English", 1178, "Allen & Unwin", "https://example.com/lord-of-the-rings.jpg", "1st Edition"
+        );
+        Book book5 = createBookWithDetail(
+                "1984", "George Orwell", "978-0451524935", 15000,
+                LocalDate.of(1949, 6, 8),manningPublications,
+                "A dystopian social science fiction novel and cautionary tale about a totalitarian regime and state control.",
+                "English", 328, "Secker & Warburg", "https://example.com/1984.jpg", "1st Edition"
+        );
+        Book book6 = createBookWithDetail(
+                "The Hitchhiker's Guide to the Galaxy", "Douglas Adams", "978-0345391803", 12000,
+                LocalDate.of(1979, 10, 12),manningPublications,
+                "A science fiction comedy series that follows the adventures of an Englishman after the Earth is destroyed.",
+                "English", 216, "Pan Books", "https://example.com/hitchhikers-guide.jpg", "1st Edition"
+        );
+        Book book7 = createBookWithDetail(
+                "Atomic Habits", "James Clear", "978-1847941831", 13000,
+                LocalDate.of(2017, 8, 24), penguinRandomHouse,
+                "An Easy and Proven Way to Build Good Habits and Break Bad Ones ",
+                "English", 268, "Random House UK Ltd", "https://example.com/Atomic-Habits.jpg", "4th Edition"
+        );
+        Book book8 = createBookWithDetail(
+                "The Pragmatic Programmer", "Andrew Hunt", "978-0135957059", 29700,
+                LocalDate.of(2022, 2, 24), penguinRandomHouse,
+                "A guide to the art and science of software development, focusing on practical tips and tricks for improving a programmer's daily work.",
+                "English", 416, "Insight", "https://example.com/The-Pragmatic-Programmer.jpg", "2nd Edition"
+        );
+        List<Book> books = bookRepository.saveAll(
+                List.of(book1,book2, book3, book4, book5, book6, book7, book8)
+        );
 
-    // 5. 인공지능 및 머신러닝
-    Book machineLearning = createBookWithDetail(
-            "Hands-On Machine Learning", "Aurélien Géron", "978-1492032649", 58000,
-            LocalDate.of(2022, 9, 15),
-            "실무에 바로 적용할 수 있는 머신러닝 가이드",
-            "English", 856, "O'Reilly Media", "https://example.com/ml-hands-on.jpg", "2nd Edition"
-    );
+        log.info("Created {} books with/without details", books.size());
+    }
 
-    Book deepLearning = createBookWithDetail(
-            "딥러닝", "Ian Goodfellow", "978-8968484636", 68000,
-            LocalDate.of(2021, 7, 30),
-            "딥러닝의 수학적 기초와 실제 구현",
-            "Korean", 775, "제이펍", "https://example.com/deep-learning.jpg", "번역판"
-    );
-
-    // 상세 정보가 없는 도서들 (BookDetail이 null)
-    Book simpleBook1 = Book.builder()
-            .title("간단한 프로그래밍 입문서")
-            .author("홍길동")
-            .isbn("978-8979143210")
-            .price(18000)
-            .publishDate(LocalDate.of(2023, 2, 28))
-            .build();
-
-    Book simpleBook2 = Book.builder()
-            .title("Basic Computer Science")
-            .author("John Smith")
-            .isbn("978-1234567890")
-            .price(25000)
-            .publishDate(LocalDate.of(2022, 12, 15))
-            .build();
-
-    Book simpleBook3 = Book.builder()
-            .title("네트워크 보안 기초")
-            .author("김보안")
-            .isbn("978-8960771234")
-            .price(30000)
-            .publishDate(LocalDate.of(2023, 4, 20))
-            .build();
-
-    // 모든 도서 저장
-    List<Book> books = bookRepository.saveAll(
-            List.of(javaBasics, pythonCookbook, webDevelopment, databaseDesign, sqlMastery,
-                    algorithms, dataStructures, softwareEngineering, cleanArchitecture,
-                    machineLearning, deepLearning, simpleBook1, simpleBook2, simpleBook3)
-    );
-
-    log.info("Created {} books with/without details", books.size());
-}
     /**
      * Book과 BookDetail을 함께 생성하는 헬퍼 메서드
      * 양방향 연관관계를 올바르게 설정합니다.
@@ -175,6 +162,7 @@ private void createBooksWithDetails() {
      * @param isbn ISBN
      * @param price 가격
      * @param publishDate 출간일
+     * @param publishers 출판사
      * @param description 도서 설명
      * @param language 언어
      * @param pageCount 페이지 수
@@ -184,7 +172,7 @@ private void createBooksWithDetails() {
      * @return 생성된 Book 엔티티 (BookDetail과 연관관계 설정됨)
      */
     private Book createBookWithDetail(String title, String author, String isbn, Integer price,
-                                      LocalDate publishDate, String description, String language,
+                                      LocalDate publishDate, Publisher publishers, String description, String language,
                                       Integer pageCount, String publisher, String coverImageUrl, String edition) {
 
         // BookDetail 생성
@@ -204,6 +192,7 @@ private void createBooksWithDetails() {
                 .isbn(isbn)
                 .price(price)
                 .publishDate(publishDate)
+                .publisher(publishers)
                 .bookDetail(detail)
                 .build();
 

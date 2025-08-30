@@ -3,10 +3,12 @@ package com.rookies4.mylabspringboot.service;
 import com.rookies4.mylabspringboot.controller.dto.BookDTO;
 import com.rookies4.mylabspringboot.entity.Book;
 import com.rookies4.mylabspringboot.entity.BookDetail;
+import com.rookies4.mylabspringboot.entity.Publisher;
 import com.rookies4.mylabspringboot.exception.BusinessException;
 import com.rookies4.mylabspringboot.exception.ErrorCode;
 import com.rookies4.mylabspringboot.repository.BookDetailRepository;
 import com.rookies4.mylabspringboot.repository.BookRepository;
+import com.rookies4.mylabspringboot.repository.PublisherRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ import java.util.List;
 public class BookService {
     private final BookRepository bookRepository;
     private final BookDetailRepository bookDetailRepository;
+    private final PublisherRepository publisherRepository;
 
     //전체 조회
     public List<BookDTO.Response> getAllBooks(){
@@ -64,6 +67,10 @@ public class BookService {
         if (bookRepository.existsByIsbn(request.getIsbn())){
             throw new BusinessException(ErrorCode.ISBN_DUPLICATE, request.getIsbn());
         }
+        Publisher publisher = publisherRepository.findById(request.getPublisherId())
+                .orElseThrow(() -> new BusinessException(ErrorCode.RESOURCE_NOT_FOUND,
+                        "Publisher", "id", request.getPublisherId()));
+
         //새 BookEntity 생성
         Book bookEntity = Book.builder()
                 .title(request.getTitle())
@@ -71,6 +78,7 @@ public class BookService {
                 .isbn(request.getIsbn())
                 .price(request.getPrice())
                 .publishDate(request.getPublishDate())
+                .publisher(publisher)
                 .build();
 
         if(request.getDetailRequest() != null){

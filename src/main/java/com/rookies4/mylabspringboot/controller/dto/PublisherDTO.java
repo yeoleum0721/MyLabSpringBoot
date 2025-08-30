@@ -25,16 +25,41 @@ public class PublisherDTO{
     public static class SimpleResponse{
         private Long id;
         private String name;
+        private String address;
+        private LocalDate establishedDate;
         private Long bookCount;
 
         public static SimpleResponse fromEntityWithCount(Publisher publisher) {
             return SimpleResponse.builder()
                     .id(publisher.getId())
                     .name(publisher.getName())
+                    .establishedDate(publisher.getEstablishedDate())
+                    .address(publisher.getAddress())
                     .bookCount((long) publisher.getBooks().size())
                     .build();
         }
     }
+    // 기본 출판사 정보만 필요한 경우 사용 (책 개수 없음)
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
+    public static class SimpleResponseWOCount {
+        private Long id;
+        private String name;
+        private String address;
+        private LocalDate establishedDate;
+
+        public static SimpleResponse fromEntity(Publisher publisher) {
+            return SimpleResponse.builder()
+                    .id(publisher.getId())
+                    .name(publisher.getName())
+                    .establishedDate(publisher.getEstablishedDate())
+                    .address(publisher.getAddress())
+                    .build();
+        }
+    }
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
@@ -43,12 +68,16 @@ public class PublisherDTO{
         private Long id;
         private String name;
         private Long bookCount;
+        private String address;
+        private LocalDate establishedDate;
         private List<BookDTO.SimpleResponse> books;
 
         public static Response fromEntity(Publisher publisher){
             return Response.builder()
                     .id(publisher.getId())
                     .name(publisher.getName())
+                    .establishedDate(publisher.getEstablishedDate())
+                    .address(publisher.getAddress())
                     .bookCount((long) publisher.getBooks().size())
                     .books(publisher.getBooks().stream()
                             .map(BookDTO.SimpleResponse::fromEntity)
