@@ -1,9 +1,7 @@
 package com.rookies4.mylabspringboot.controller;
 
 import com.rookies4.mylabspringboot.controller.dto.BookDTO;
-import com.rookies4.mylabspringboot.entity.Book;
 import com.rookies4.mylabspringboot.service.BookService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +11,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/books")
-public class BookRestController {
+public class BookController {
     private final BookService bookService;
 
     //전체 조회

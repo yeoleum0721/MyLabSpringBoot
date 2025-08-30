@@ -1,6 +1,6 @@
 package com.rookies4.mylabspringboot.repository;
 
-import com.rookies4.mylabspringboot.entity.Book;
+
 import com.rookies4.mylabspringboot.entity.BookDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,12 +11,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface BookDetailRepository extends JpaRepository<BookDetail,Long> {
-    Optional<BookDetail> findByBookId(Long id);
+public interface BookDetailRepository extends JpaRepository<BookDetail, Long> {
 
+    Optional<BookDetail> findByBookId(Long bookId);
 
     @Query("SELECT bd FROM BookDetail bd JOIN FETCH bd.book WHERE bd.id = :id")
     Optional<BookDetail> findByIdWithBook(@Param("id") Long id);
 
-    List<BookDetail> findByPublisher(String publisher);
+    @Query("SELECT bd FROM BookDetail bd WHERE bd.publisher = :publisher")
+    List<BookDetail> findByPublisher(@Param("publisher") String publisher);
 }

@@ -1,39 +1,42 @@
 package com.rookies4.mylabspringboot.entity;
 
+import com.rookies4.mylabspringboot.entity.Book;
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name="book_details")
+@Table(name = "book_details")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Getter
 @Setter
-public class BookDetail{    
-@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name ="book_detail_id")
-private Long id;
+public class BookDetail {
 
-@Column(nullable = false)
-private String description;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "book_detail_id")
+    private Long id;
 
-@Column(nullable = false)
-private String language;
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
-@Column(nullable = false)
-private Integer pageCount;
+    @Column(name = "language")
+    private String language;
 
-@Column(nullable = false)
-private String publisher;
+    @Column(name = "page_count")
+    private Integer pageCount;
 
-@Column(nullable = false)
-private String coverImageUrl;
+    @Column(name = "publisher")
+    private String publisher;
 
-@Column(nullable = false)
-private String edition;
+    @Column(name = "cover_image_url")
+    private String coverImageUrl;
 
-@OneToOne(fetch = FetchType.LAZY)
-@JoinColumn(name="book_id",unique= true)
-private Book book;
+    @Column(name = "edition")
+    private String edition;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id", unique = true)
+    private Book book;
 }

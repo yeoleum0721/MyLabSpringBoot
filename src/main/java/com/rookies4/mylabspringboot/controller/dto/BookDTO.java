@@ -40,6 +40,9 @@ public class BookDTO {
         
         @Valid
         private BookDetailDTO detailRequest;
+
+        @Valid
+        private Long publisherId;
     }
     @Data
     @NoArgsConstructor
@@ -58,6 +61,30 @@ public class BookDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
+    public static class SimpleResponse {
+        private Long id;
+        private String title;
+        private String author;
+        private String isbn;
+        private Integer price;
+        private LocalDate publishDate;
+
+        public static SimpleResponse fromEntity(Book book) {
+            return SimpleResponse.builder()
+                    .id(book.getId())
+                    .title(book.getTitle())
+                    .author(book.getAuthor())
+                    .isbn(book.getIsbn())
+                    .price(book.getPrice())
+                    .publishDate(book.getPublishDate())
+                    .build();
+        }
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Builder
     public static class Response {
         private Long id;
         private String title;
@@ -66,6 +93,7 @@ public class BookDTO {
         private Integer price;
         private LocalDate publishDate;
         private BookDetailResponse detail;
+        private PublisherDTO.SimpleResponse publisher;
 
         public static Response fromEntity(Book book) {
             BookDetailResponse detailResponse = book.getBookDetail() != null
@@ -79,7 +107,12 @@ public class BookDTO {
                     .edition(book.getBookDetail().getEdition())
                     .build()
                     : null;
-
+            PublisherDTO.SimpleResponse publishResponse = book.getPublisher() !=null
+                    ? PublisherDTO.SimpleResponse.builder()
+                    .id(book.getPublisher().getId())
+                    .name(book.getPublisher().getName())
+                    .build()
+                    : null;
             return Response.builder()
                     .id(book.getId())
                     .title(book.getTitle())
@@ -88,6 +121,7 @@ public class BookDTO {
                     .price(book.getPrice())
                     .publishDate(book.getPublishDate())
                     .detail(detailResponse)
+                    .publisher(publishResponse)
                     .build();
         }
     }
